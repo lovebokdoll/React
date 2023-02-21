@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바벨소개</title>
+    <!-- import React form "react" -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <!-- 
+      ES5 버전에서도 동작하도록 지원하기 위해서 바벨도 주입받음
+      CDN반식은 로컬 PC캐쉬 사용함 - 시스템 사용발생
+      unpkg방식 네트워크 통해 객체주입 - 속도향상에 도움
+     -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 아래 내부노드에 리액트를 통해서 생산된 태그들이 들어옴 -->
+    <div id="root"></div>
+    <style>
+      .title {
+        color: aqua;
+      }
+    </style>
+    <script type="text/babel">
+      //자바스크립트에서 html노드를 접근하기 위해서 브라우저의 내장객체인 document는 querySelector제공
+       const rootElement = document.querySelector("#root");//아이디인 경우 반드시 #을 붙임
+      //리액트에서 제공하는 createElement함수로 태그를 생성가능함
+      //스타일 추가시에는 반드시 class속성이 아니라 className으로 해야 함
+       const element = React.createElement(//DOM생성하기
+        "h1",
+        {
+          className: "title",
+        },
+        ["Java", "react", "Spring"]
+      );
+      ReactDOM.createRoot(rootElement).render(element);
+    </script>
+  </body>
+</html>
