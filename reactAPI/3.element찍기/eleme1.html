@@ -16,21 +16,21 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
+    <div id="root"></div>
     <script type="text/babel">
       const rootElement = document.querySelector("#root");
       // 반드시 대문자로 적기
-
-      const Paint = (title, description) => (
+      const Paint = ( title, description ) => (
         <>
           <h1>{title}</h1>
-          <h1>{description}</h1>
+          <h2>{description}</h2>
         </>
       );
       const element = (
         <>
-          {paint("java", "객체지향프로그래밍")}
-          {paint("react", "프론트앤드 라이브러리")}
-          {paint("oracle", "관계지향형데이터베이스")}
+          {Paint("java", "객체지향프로그래밍")}
+          {Paint("react", "프론트앤드 라이브러리")}
+          {Paint("oracle", "관계지향형데이터베이스")}
         </>
       );
       ReactDOM.createRoot(rootElement).render(element);

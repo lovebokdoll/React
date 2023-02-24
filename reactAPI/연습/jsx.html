@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>jsx복습</title>
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -16,23 +16,11 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div id="root">
-      <h1>one</h1>
-      <h1>two</h1>
-      <h1>three</h1>
-    </div>
+    <div id="root"></div>
     <script type="text/babel">
       const rootElement = document.querySelector("#root");
-      const element = (
-        <div
-          className="box"
-          children={[
-            React.createElement("h1", null, "zero"),
-            React.createElement("h1", null, "two"),
-            React.createElement("h1", null, "three"),
-          ]}
-        />
-      );
+      const name = "bokdoll";
+      const element = <h1>Hello,{name}</h1>;
       ReactDOM.createRoot(rootElement).render(element);
     </script>
   </body>

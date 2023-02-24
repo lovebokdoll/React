@@ -24,7 +24,7 @@
     <script type="text/babel">
       const rootElement = document.querySelector("#root");
       const element = (
-        <React class="Fragment">
+        <React.Fragment>
           <div
             className="box"
             children={[
@@ -33,7 +33,7 @@
               React.createElement("h1", null, "three"),
             ]}
           />
-        </React>
+        </React.Fragment>
       );
       ReactDOM.createRoot(rootElement).render(element);
     </script>
