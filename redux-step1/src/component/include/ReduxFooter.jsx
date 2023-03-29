@@ -6,7 +6,7 @@ const ReduxFooter = () => {
   const dispatch = useDispatch();
   const handleAdd = (e) => {
     e.preventDefault(); //이벤트버블링차단
-    dispatch(increase('김춘추'));
+    dispatch(increase("김춘추"));
   };
   return (
     <>

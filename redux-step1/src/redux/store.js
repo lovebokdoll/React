@@ -5,6 +5,14 @@ export const increase = (mem_name) => ({
   type: "INCREASE",
   payload: mem_name,
 });
+export const decrease = (empVO) => ({
+  type: "DECREASE",
+  payload: empVO,
+});
+export const dpetlist = (depts) => ({
+  type: "DEPTLIST",
+  payload: depts,
+});
 /**
  * 초기상태 만들기
  */
@@ -29,8 +37,12 @@ const reducer = (state = initstate, action) => {
   switch (action.type) {
     case "INCREASE":
       //return이 언제 누구에게 무었을 어떤순간에 변경이 되는건가?
-      //return이 되면 호출한쪽에서 받는게 아니라, return되는 순간 바로 화면이 변경된다.
+      //return이 되면 호출한쪽에서 받는게 아니라, return되는 순간 즉시! 바로 화면이 변경된다.
       return { ...state, number: state.number + 1, mem_name: action.payload };
+    case "DECREASE":
+      return { ...state, number: state.number - 1, empVO: action.payload };
+    case "DEPTLIST":
+      return { dept: action.payload };
     default:
       return { ...state }; //깊은복사 : 새로운 객체가 생성되는것
   }

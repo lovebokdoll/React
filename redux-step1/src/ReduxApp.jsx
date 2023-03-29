@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import ReduxFooter from "./component/include/ReduxFooter";
 import ReduxHeader from "./component/include/ReduxHeader";
 import ReduxMainPage from "./component/page/ReduxMainPage";
