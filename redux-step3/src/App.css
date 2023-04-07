@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  height: 700px;
+  border: 2px solid black;
+}
+.sub_container {
+  height: 450px;
+  border: 2px solid black;
+}
+.header_container {
+  height: 200px;
+  border: 2px solid purple;
+  margin: 3px 0px;
+}
+.main_container {
+  height: 400px;
+  border: 2px solid violet;
+  margin: 3px 0px;
+}
+.footer_container {
+  height: 100px;
+  border: 2px solid lightpink;
+  margin: 3px 0px;
+}
+div {
+  padding: 10px; /* 외부 상하좌우 10px */
+}
