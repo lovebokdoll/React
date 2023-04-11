@@ -10,16 +10,19 @@ const AppDiv = styled.div`
   display: flex;
   justify-content: center;
   align-item: center;
-  background-color:#DAF5FF;
+  background-color: #daf5ff;
 `;
 
-const App = () => {
+const App = ({ FileInput }) => {
   return (
     <>
       <AppDiv>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/manager" element={<CardManager />} />
+          <Route
+            path="/manager"
+            element={<CardManager FileInput={FileInput} />}
+          />
         </Routes>
       </AppDiv>
     </>

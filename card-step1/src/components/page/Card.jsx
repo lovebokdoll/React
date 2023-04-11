@@ -50,7 +50,8 @@ const MessageP = styled.p`
 
 const Card = ({ card }) => {
   const DEFAULT_IMAGE = "./images/명수.jpg";
-  const { name, company, title, email, message, theme } = card;
+  const { name, company, title, email, message, theme, filename, fileURL } =
+    card;
   const getStyles = (theme) => {
     switch (theme) {
       case "dark":
@@ -63,9 +64,10 @@ const Card = ({ card }) => {
         throw new Error("unknown theme:${theme}");
     }
   };
+  const url = fileURL || DEFAULT_IMAGE;
   return (
     <CardLi className={`${styles.card} ${getStyles(theme)}`}>
-      <AvatarImg src={DEFAULT_IMAGE} alt="profile image" />
+      <AvatarImg src={url} alt="profile image" />
       <div className={{ width: "100%" }}>
         <NameH1>{name}</NameH1>
         <CompanyP>{company}</CompanyP>
